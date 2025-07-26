@@ -79,7 +79,6 @@ export default function ShowcaseSkills() {
         </div>
       </section>
 
-      {/* Image Group with Transitions */}
       <div className="logo relative w-[420px] h-[220px]">
         <AnimatePresence mode="wait">
           <motion.div

@@ -46,12 +46,12 @@ export default function SlideProject() {
   const x = useMotionValue(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
-   const duplicatedImages = useMemo(() => [...IMAGES, ...IMAGES, ...IMAGES], []);
+   const duplicatedImages = useMemo(() => [...IMAGES, ...IMAGES, ...IMAGES, ...IMAGES, ...IMAGES, ...IMAGES], []);
 
   useAnimationFrame((_, delta) => {
     if (hoveredIndex === null) {
       const current = x.get();
-      x.set(current - (delta * 0.2)); // speed control
+      x.set(current - (delta * 0.2)); 
     }
   });
 
