@@ -47,7 +47,7 @@ export default function ShowcaseSkills() {
   useMotionValueEvent(indexValue, "change", (latest) => {
     setActiveIndex(Math.floor(latest + 0.5));
   });
-
+ 
   const currentImages = imageGroups[activeIndex];
 
   return (
