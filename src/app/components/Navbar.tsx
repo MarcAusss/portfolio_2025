@@ -6,7 +6,7 @@ export default function Navbar() {
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    // Adjust this timeout to match your animation-bg duration (e.g. 3.5s)
+    
     const timeout = setTimeout(() => setShow(true), 1500);
     return () => clearTimeout(timeout);
   }, []);
@@ -33,7 +33,7 @@ export default function Navbar() {
                     key={item}
                     className={`navbar-item${show ? " navbar-item-animate" : ""}`}
                     style={{
-                    animationDelay: `${i * 0.2 + 0.1}s`,
+                    animationDelay: `${i * 0.1 + 0}s`,
                     }}
                 >
                     {item}

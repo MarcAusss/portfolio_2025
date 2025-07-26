@@ -1,4 +1,6 @@
 "use client";
+import ShowcaseProjects from "./components/projects";
+import ShowcaseSkills from "./components/ShowcaseSkills";
 
 export default function Home() {
   const text = "MARC AUSTIN";
@@ -7,7 +9,7 @@ export default function Home() {
   
   return (
     <div className="w-[100%]">
-      <div className="w-full h-screen bg-[#ffffffb7] overflow-hidden">
+      <div className="w-full h-screen bg-[#ffffff] overflow-hidden">
         <div className="relative">
           <div className="flex flex-col absolute">
             <div className="bg-black w-[1905px] h-10 animation-bg1"></div>
@@ -17,7 +19,7 @@ export default function Home() {
             <div className="bg-black w-[1905px] h-36 animation-bg5"></div>
             <div className="bg-black w-[1905px] h-44 animation-bg6 flex flex-col items-end justify-center ">
               <h2 className="text-[2rem] pr-10">
-                {"Web Developer specializing in "
+                {"I'm a Web Developer specializing in "
                   .split(" ")
                   .map((word, i) => (
                     <span
@@ -81,7 +83,7 @@ export default function Home() {
 
 
 
-      <div className="w-full mt-10 bg-white">
+      <div className="w-full mt-10 pb-10 bg-white">
         <div className="flex flex-col gap-1">
           <div className="bg-black w-full h-5"></div>
           <div className="bg-black w-full h-4"></div>
@@ -90,27 +92,15 @@ export default function Home() {
           <div className="bg-black w-full h-1"></div>
         </div>
 
-        <div className="px-20 mt-10">
-          <div className="flex justify-around">
-            <div className="h-[2000px] w-[40%]">
-              <div className="sticky top-[35%] p-4 text-2xl text-black">
-                <h1 className="text-5xl">ARchi</h1>
-                <i className="text-3xl text-gray-500">Architectural Firm</i>
-                <div className="pt-5">
-                  <p className="">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius, itaque unde ipsa quod veniam repellat sint aliquid nesciunt beatae culpa iure dolore! Laudantium quas odio fugiat maiores non, dolor beatae voluptate aperiam expedita debitis impedit autem natus saepe dignissimos voluptatem hic praesentium nihil officiis sapiente illo, accusantium officia! Rem, voluptatibus.</p>
-                </div>
-              </div>
-            </div>
+        <ShowcaseProjects/>
+      </div>
 
-            <div>
-              <img
-                src="/images/archi_website.png"
-                alt="Architecture"
-                className="h-[2000px] w-auto object-cover"
-              />
-            </div>
-          </div>
-        </div>
+      <div className="w-full">
+        <ShowcaseSkills/>
+      </div>
+
+      <div className="w-full h-96 bg-white">
+
       </div>
     </div>
   );

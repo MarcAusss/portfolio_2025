@@ -17,6 +17,8 @@ h1{
   font-family: 'Berghan', serif;
   font-weight: bolder;
 }
+
+
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
