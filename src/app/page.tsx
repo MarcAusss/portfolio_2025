@@ -1,88 +1,29 @@
 "use client";
+import ContactSide from "./components/contact";
 import ShowcaseProjects from "./components/projects";
-import ShowcaseSkills from "./components/ShowcaseSkills";
+import ShowcaseSkills from "./components/SideComponents/ShowcaseSkills";
+import IntroSlideAnimation from "./components/SideComponents/slideAnimationIntro";
+import Testimonials from "./components/testimonials";
+
 
 export default function Home() {
-  const text = "MARC AUSTIN";
-  const center = Math.floor((text.length - 1) / 2);
-  const maxDistance = Math.max(...text.split("").map((_, i) => Math.abs(i - center)));
+ 
   
   return (
     <div className="w-[100%]">
+      
+      {/*------------ Landing page Section ------------*/}
       <div className="w-full h-screen bg-[#ffffff] overflow-hidden">
         <div className="relative">
           <div className="flex flex-col absolute">
-            <div className="bg-black w-[1905px] h-10 animation-bg1"></div>
-            <div className="bg-black w-[1905px] h-14 animation-bg2"></div>
-            <div className="bg-black w-[1905px] h-20 animation-bg3"></div>
-            <div className="bg-black w-[1905px] h-28 animation-bg4"></div>
-            <div className="bg-black w-[1905px] h-36 animation-bg5"></div>
-            <div className="bg-black w-[1905px] h-44 animation-bg6 flex flex-col items-end justify-center ">
-              <h2 className="text-[2rem] pr-10">
-                {"I'm a Web Developer specializing in "
-                  .split(" ")
-                  .map((word, i) => (
-                    <span
-                      key={i}
-                      className="word-slide"
-                      style={{
-                        animationDelay: `${i * 0.05 + 1.2 + 0}s`,
-                      }}
-                    >
-                      {word}&nbsp;
-                    </span>
-                  ))}
-              </h2>
-              <h2 className="text-[2rem] pr-10">
-                {"both front-end and back-end development."
-                  .split(" ")
-                  .map((word, i) => (
-                    <span
-                      key={i}
-                      className="word-slide"
-                      style={{
-                        animationDelay: `${i * 0.05 + 1.5 + 0}s`,
-                      }}
-                    >
-                      {word}&nbsp;
-                    </span>
-                  ))}
-              </h2>
-            </div>
-            <div className="bg-black h-[350px] animation-bg7 flex items-center justify-center">
-              <h1
-                className="tracking-[0.1em] text-[14rem] text-center"
-                style={{ overflow: "hidden", display: "inline-block" }}
-              >
-                {text.split("").map((char, i) => {
-                  const distance = Math.abs(i - center);
-                  const delay = `${(maxDistance - distance) * 0.05 + 1.2 + 0}s`;
-
-                  let customClass = "";
-                  if (i === 0 || i === text.length - 1) customClass +=  "text-[22rem]";
-                  //  if (char === "A") customClass +=  "text-[12rem] text-red-200";
-                  return (
-                    <span
-                      key={i}
-                      className={`letter-slideup ${customClass ? "" + customClass : ""}`}
-                      style={{
-                        display: "inline-block",
-                        opacity: 0,
-                        animationDelay: delay,
-                      }}
-                    >
-                      {char === " " ? "\u00A0" : char}
-                    </span>
-                  );
-                })}
-              </h1>
-            </div>
+            <IntroSlideAnimation/>
           </div>
         </div>
       </div>
+      {/*------------ End of Landing page Section ------------*/}
 
 
-
+      {/*------------ Projects Section ------------*/}
       <div className="w-full mt-10 pb-10 bg-white">
         <div className="flex flex-col gap-1">
           <div className="bg-black w-full h-5"></div>
@@ -91,17 +32,32 @@ export default function Home() {
           <div className="bg-black w-full h-2"></div>
           <div className="bg-black w-full h-1"></div>
         </div>
+      {/*------------ End of Projects Section ------------*/}
 
         <ShowcaseProjects/>
       </div>
 
+
+      {/*------------ Skills Section ------------*/}
       <div className="w-full">
         <ShowcaseSkills/>
       </div>
+      {/*------------ End of Skills Section ------------*/}
 
-      <div className="w-full h-96 bg-white">
 
+      {/*------------ Testimonials Section ------------*/}
+      <div className="w-full bg-white">
+        <Testimonials/>
       </div>
+      {/*------------ End of Testimonials Section ------------*/}
+
+
+      {/*------------ Contact Section ------------*/}
+      <div className="bg-black p-20">
+        <ContactSide/>
+      </div>
+      {/*------------ End of Contact Section ------------*/}
+
     </div>
   );
 }
