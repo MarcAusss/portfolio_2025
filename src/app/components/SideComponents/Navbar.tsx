@@ -8,13 +8,11 @@ export default function Navbar() {
 
   const lastScrollY = useRef(0);
 
-  // Initial delayed animation
   useEffect(() => {
     const timeout = setTimeout(() => setShow(true), 1500);
     return () => clearTimeout(timeout);
   }, []);
 
-  // Scroll direction and navbar visibility control
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;

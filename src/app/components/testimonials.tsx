@@ -32,7 +32,6 @@ export default function Testimonials() {
         </div>
       </div>
 
-      {/* Testimonial */}
       <div className="bg-white w-[500px] h-[400px] border-6 border-black relative">
         <div className="absolute">
           <img

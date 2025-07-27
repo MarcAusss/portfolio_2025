@@ -62,18 +62,9 @@ export default function SlideProject() {
 
   return (
     <div className="overflow-hidden w-full mt-20">
-      <motion.div
-        ref={containerRef}
-        className="flex gap-10 w-max"
-        style={{ x: translateX }}
-      >
+      <motion.div ref={containerRef} className="flex gap-10 w-max" style={{ x: translateX }} >
          {duplicatedImages.map((img, index) => (
-          <div
-            key={index}
-            className="relative w-[500px] shrink-0"
-            onMouseEnter={() => setHoveredIndex(index)}
-            onMouseLeave={() => setHoveredIndex(null)}
-          >
+          <div key={index} className="relative w-[500px] shrink-0" onMouseEnter={() => setHoveredIndex(index)} onMouseLeave={() => setHoveredIndex(null)}>
             <img
               src={img.src}
               alt={img.alt}

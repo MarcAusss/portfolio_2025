@@ -6,10 +6,7 @@ export default function NameAnimation() {
   );
   return (
     <div className="cursor-default">
-      <h1
-        className="tracking-[0.1em] text-[14rem] text-center"
-        style={{ overflow: "hidden", display: "inline-block" }}
-      >
+      <h1 className="tracking-[0.1em] text-[14rem] text-center" style={{ overflow: "hidden", display: "inline-block" }} >
         {text.split("").map((char, i) => {
           const distance = Math.abs(i - center);
           const delay = `${(maxDistance - distance) * 0.05 + 1.2 + 0}s`;
