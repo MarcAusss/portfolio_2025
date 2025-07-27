@@ -5,7 +5,7 @@ export default function NameAnimation() {
     ...text.split("").map((_, i) => Math.abs(i - center))
   );
   return (
-    <div className="">
+    <div className="cursor-default">
       <h1
         className="tracking-[0.1em] text-[14rem] text-center"
         style={{ overflow: "hidden", display: "inline-block" }}

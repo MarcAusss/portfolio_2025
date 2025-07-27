@@ -1,6 +1,6 @@
 export default function IntroDesc() {
   return (
-    <div className="">
+    <div className="cursor-default">
       <h2 className="text-[2rem] pr-10">
         {"I'm a Web Developer specializing in ".split(" ").map((word, i) => (
           <span
