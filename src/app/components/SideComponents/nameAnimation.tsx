@@ -4,24 +4,26 @@ export default function NameAnimation() {
   const maxDistance = Math.max(
     ...text.split("").map((_, i) => Math.abs(i - center))
   );
+
   return (
-    <div className="cursor-default">
-      <h1 className="tracking-[0.1em] text-[14rem] text-center" style={{ overflow: "hidden", display: "inline-block" }} >
+    <div className="cursor-default overflow-hidden">
+      <h1 className="text-center tracking-[0.1em] text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[14rem]"
+        style={{ display: "inline-block" }}
+      >
         {text.split("").map((char, i) => {
           const distance = Math.abs(i - center);
-          const delay = `${(maxDistance - distance) * 0.05 + 1.2 + 0}s`;
+          const delay = `${(maxDistance - distance) * 0.05 + 1.2}s`;
 
           let customClass = "";
-          if (i === 0 || i === text.length - 1) customClass += "text-[22rem]";
-          //  if (char === "A") customClass +=  "text-[12rem] text-red-200";
+          if (i === 0 || i === text.length - 1)
+            customClass +=
+              "text-[5rem] sm:text-[7rem] md:text-[10rem] lg:text-[14rem] xl:text-[22rem]";
+
           return (
             <span
               key={i}
-              className={`letter-slideup ${
-                customClass ? "" + customClass : ""
-              }`}
+              className={`letter-slideup inline-block ${customClass}`}
               style={{
-                display: "inline-block",
                 opacity: 0,
                 animationDelay: delay,
               }}

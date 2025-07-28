@@ -1,0 +1,25 @@
+/* calendar-dark.css */
+.REACT-CALENDAR {
+  background-color: #1f2937 !important; /* Tailwind gray-800 */
+  color: white !important;
+  border-radius: 0.5rem;
+  border: none;
+  padding: 1rem;
+}
+
+.react-calendar__tile {
+  background: transparent !important;
+  color: white !important;
+}
+
+.react-calendar__tile--active {
+  background: #22c55e !important; /* Tailwind green-500 */
+  color: black !important;
+  border-radius: 0.375rem;
+}
+
+.react-calendar__tile--now {
+  background: #4b5563 !important; /* Tailwind gray-600 */
+  color: white !important;
+  border-radius: 0.375rem;
+}
