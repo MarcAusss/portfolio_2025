@@ -13,7 +13,7 @@ export default function IntroSlideAnimation(){
             <div className="bg-black w-[1905px] h-40 animation-bg6 flex flex-col items-end justify-center ">
               <IntroDesc/>
             </div>
-            <div className="bg-black h-[350px] animation-bg7 flex justify-center">
+            <div className="bg-black h-[250px] animation-bg7 flex justify-center">
               <NameAnimation/>
             </div>
         </div>
