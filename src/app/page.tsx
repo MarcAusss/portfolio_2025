@@ -11,9 +11,9 @@ export default function Home() {
     <div className="w-full">
       
       {/*------------ Landing page Section ------------*/}
-      <div className="w-full min-h-screen bg-white overflow-hidden">
+      <div className="w-full min-h-[80vh] bg-white overflow-hidden">
         <div className="relative">
-          <div className="flex flex-col absolute inset-0">
+          <div className="flex flex-col inset-0">
             <IntroSlideAnimation />
           </div>
         </div>

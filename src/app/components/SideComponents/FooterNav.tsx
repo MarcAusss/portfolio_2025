@@ -1,7 +1,7 @@
 export default function FooterNav() {
   return (
-    <footer className="w-full px-6 py-12 bg-black text-white">
-      <div className="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-[7rem] max-w-6xl mx-auto">
+    <footer className="w-full px-0 py-12 bg-black text-white">
+      <div className="flex flex-col lg:flex-row items-start justify-between gap-16 lg:gap-[7rem] max-w-7xl mx-auto">
         {/* Social Media Section */}
         <div>
           <h1 className="text-3xl mb-8">Social Media</h1>

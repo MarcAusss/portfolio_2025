@@ -9,7 +9,7 @@ export default function ShowcaseProjects() {
         <div className="flex flex-col lg:flex-row justify-around gap-10">
           {/* Text Section */}
           <div className="w-full lg:w-[40%]">
-            <div className="lg:sticky top-[35%] p-4 text-black">
+            <div className="lg:sticky top-[25%] p-4 text-black">
               <h1 className="text-4xl md:text-5xl font-bold">ARchi</h1>
               <i className="text-2xl text-gray-500">Architectural Firm</i>
               <div className="pt-5 text-base md:text-lg leading-relaxed">

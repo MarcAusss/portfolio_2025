@@ -7,7 +7,7 @@ export default function NameAnimation() {
 
   return (
     <div className="cursor-default overflow-hidden">
-      <h1 className="text-center tracking-[0.1em] text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[14rem]"
+      <h1 className="text-center tracking-[0.1em] text-[4rem] sm:text-[6rem] md:text-[8rem] lg:text-[10rem] xl:text-[1200%]"
         style={{ display: "inline-block" }}
       >
         {text.split("").map((char, i) => {
@@ -17,7 +17,7 @@ export default function NameAnimation() {
           let customClass = "";
           if (i === 0 || i === text.length - 1)
             customClass +=
-              "text-[5rem] sm:text-[7rem] md:text-[10rem] lg:text-[14rem] xl:text-[22rem]";
+              "text-[5rem] sm:text-[7rem] md:text-[10rem] lg:text-[14rem] xl:text-[150%] leading-[0px]";
 
           return (
             <span

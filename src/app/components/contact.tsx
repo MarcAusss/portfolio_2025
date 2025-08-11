@@ -4,7 +4,7 @@ import FooterNav from "./SideComponents/FooterNav";
 
 export default function ContactSide() {
   return (
-    <main className="px-6 py-10 flex flex-col gap-12 bg-black text-white">
+    <main className="px-6 flex flex-col gap-12 bg-black text-white">
       {/* Email Header */}
       <h1 className="text-3xl md:text-5xl lg:text-6xl text-center md:text-left">
         marcaustin@gmail.com

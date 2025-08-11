@@ -54,7 +54,7 @@ export default function ShowcaseSkills() {
     <main className="bg-black text-white flex justify-between px-40 items-center">
       <section ref={sectionRef} className="h-[70vh]">
         <div className="relative h-full">
-          <h1 className="absolute top-[210px] left-[-120px] text-6xl" style={{ rotate: "-90deg" }} >
+          <h1 className="absolute top-[32%] left-[-120px] text-6xl" style={{ rotate: "-90deg" }} >
             SKILLS
           </h1>
           <div className="h-full flex flex-col items-start justify-center gap-10 sticky top-0">
