@@ -6,7 +6,7 @@ export default function FooterNav() {
   const socialLinks = [
     { src: "/images/logo/facce.png", label: "Facebook", href: "https://www.facebook.com/bonagua.marc/", bg: "bg-[#1877F2]" },
     { src: "/images/logo/Instagram_icon.png", label: "Instagram", href: "https://www.instagram.com/marcaus_dvlp/", bg: "" },
-    { src: "/images/logo/LinkedIn_logo_initials.png", label: "LinkedIn", href: "https://www.linkedin.com/in/marc-austin-bonagua-78070b2a8/", bg: "" },
+    { src: "/images/logo/LinkedIn_logo_initials.png", label: "LinkedIn", href: "https://www.linkedin.com/in/marc-austin-bonagua-04a153372/", bg: "" },
   ];
 
   // Smooth scroll for footer nav links
