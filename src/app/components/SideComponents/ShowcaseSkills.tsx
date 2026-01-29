@@ -9,13 +9,9 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-const words = ["Animator", "Photographer", "UI/UX Designer", "Web Developer"];
+const words = [ "Photographer", "UI/UX Designer", "Web Developer"];
 
 const imageGroups = [
-  [
-    "/images/logo/Adobe_Photoshop_CC_icon.svg.png",
-    "/images/logo/Adobe_Animate_CC_icon_(2020).svg.png",
-  ],
   [
     "/images/logo/Adobe_Photoshop_CC_icon.svg.png",
     "/images/logo/Adobe_Photoshop_Lightroom_CC_logo.svg.png",
@@ -31,6 +27,11 @@ const imageGroups = [
     "/images/logo/Laravel-Logo.wine.png",
     "/images/logo/React.webp",
     "/images/logo/Wordpress_Blue_logo.png",
+    "/images/logo/Tailwind_CSS_Logo.svg.png",
+    "/images/logo/seal-color.png",
+    "/images/logo/Bootstrap_logo.svg.png",
+    "/images/logo/javascript-logo-javascript-icon-transparent-free-png.webp",
+    "/images/logo/nextjs-icon-icon-sm.png",
   ],
 ];
 
@@ -90,7 +91,7 @@ export default function ShowcaseSkills() {
                 ? "grid-cols-2 grid-rows-2"
                 : currentImages.length === 4
                 ? "grid-cols-2 grid-rows-2"
-                : "grid-cols-2"
+                : "grid-cols-4"
               }
               w-full h-full place-items-center
             `}

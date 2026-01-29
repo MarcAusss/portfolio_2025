@@ -20,7 +20,6 @@ export default function Navbar() {
       const currentScrollY = window.scrollY;
       setScrolled(currentScrollY > 10);
 
-      // Prevent jitter at the top
       if (Math.abs(currentScrollY - lastScrollY.current) < 5) return;
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 10) {
@@ -36,7 +35,16 @@ export default function Navbar() {
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
 
-  const navItems = ["Home", "About", "Contact"];
+  const navItems = ["Home", "Projects", "About", "Contact"];
+
+  // Smooth scroll function
+  const handleScrollToSection = (sectionId: string) => {
+    const el = document.getElementById(sectionId.toLowerCase());
+    if (el) {
+      el.scrollIntoView({ behavior: "smooth", block: "start" });
+      setMenuOpen(false); // Close mobile menu
+    }
+  };
 
   return (
     <nav
@@ -63,9 +71,8 @@ export default function Navbar() {
             <li
               key={item}
               className={`navbar-item${show ? " navbar-item-animate" : ""} cursor-pointer`}
-              style={{
-                animationDelay: `${i * 0.1}s`,
-              }}
+              style={{ animationDelay: `${i * 0.1}s` }}
+              onClick={() => handleScrollToSection(item)}
             >
               {item}
             </li>
@@ -92,7 +99,7 @@ export default function Navbar() {
             key={item}
             className={`navbar-item${show ? " navbar-item-animate" : ""} cursor-pointer`}
             style={{ animationDelay: `${i * 0.1}s` }}
-            onClick={() => setMenuOpen(false)}
+            onClick={() => handleScrollToSection(item)}
           >
             {item}
           </div>

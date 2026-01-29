@@ -1,7 +1,7 @@
-'use client';
+"use client";
 
-import { useRef, useState } from 'react';
-import { motion } from 'framer-motion';
+import { useRef, useState } from "react";
+import { motion } from "framer-motion";
 
 export default function Testimonials() {
   const containerRef = useRef(null);
@@ -17,23 +17,27 @@ export default function Testimonials() {
 
   return (
     <main className="py-10 px-4 flex flex-col lg:flex-row items-center justify-center">
-      
       <div
-        className="relative w-full max-w-[500px] h-[300px] sm:h-[400px] overflow-hidden"
+        className="relative w-full max-w-[500px] h-[300px] sm:h-[400px] overflow-hidden flex items-center justify-center"
         onMouseMove={handleMouseMove}
         ref={containerRef}
       >
         <motion.div
-          className="absolute inset-0"
+          className="absolute inset-0 "
           style={{
             backgroundImage: `linear-gradient(to right, rgb(212, 212, 212) 1px, transparent 1px), linear-gradient(to bottom, rgb(212, 212, 212) 1px, transparent 1px)`,
-            backgroundSize: '90px 90px',
+            backgroundSize: "90px 90px",
             backgroundPosition: `${mouse.x * 0.2}px ${mouse.y * 0.2}px`,
-            backgroundColor: '#000',
+            backgroundColor: "#000",
           }}
         />
 
-        <div className="absolute inset-0 m-10 sm:m-20 bg-white" />
+        <div className="flex flex-col gap-10">
+          <img
+            src="/images/494813663_1380206836645000_1413098996973144328_n.jpg"
+            className="relative inset-0 m-10 sm:m-20 w-72"
+          />
+        </div>
       </div>
 
       <div className="bg-white w-full max-w-[500px] h-[300px] sm:h-[400px] border-[6px] border-black relative">
@@ -47,9 +51,9 @@ export default function Testimonials() {
         <div className="flex flex-col items-center justify-center h-full w-full text-black px-6">
           <div className="pt-16 sm:pt-20 text-center">
             <h2 className="text-lg sm:text-base  lg:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. At nostrum saepe vel vitae aliquid eius beatae laborum voluptates temporibus accusantium.
+              I am a BSIT graduate majoring in Web Development, specializing in front-end development. I am also familiar with back-end development and have some experience in mobile development.
             </h2>
-            <h2 className="mt-4 font-bold text-base sm:text-lg">Jane Doe</h2>
+            <h2 className="mt-4 font-bold text-base sm:text-lg">Marc Austin Bonagua</h2>
           </div>
         </div>
       </div>
