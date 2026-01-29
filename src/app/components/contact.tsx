@@ -7,7 +7,7 @@ export default function ContactSide() {
     <main className="px-6 flex flex-col gap-12 bg-black text-white">
       {/* Email Header */}
       <h1 className="text-3xl md:text-5xl lg:text-6xl text-center md:text-left">
-        marcaustin@gmail.com
+        marcaus25@gmail.com
       </h1>
 
       {/* Content Area */}
