@@ -15,7 +15,7 @@ export default function FooterNav() {
     if (el) {
       el.scrollIntoView({ behavior: "smooth", block: "start" });
     }
-  };
+  };    
 
   return (
     <footer className="w-full px-4 py-6 bg-black text-white">
