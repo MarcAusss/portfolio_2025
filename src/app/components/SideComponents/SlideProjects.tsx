@@ -11,7 +11,7 @@ const images = [
   { id: 4, src: "/images/Document-01-29-2026_12_53_PM.png", title: "Project Four", desc: "Description for image four" },
   { id: 5, src: "/images/2023-07-11 20 15 24.png", title: "Project Five", desc: "Description for image five" },
   { id: 6, src: "/images/archi_website.png", title: "Project Six", desc: "Description for image six" },
-];
+];  
 
 export default function SlideProject() {
   const [visibleCount, setVisibleCount] = useState(0);
