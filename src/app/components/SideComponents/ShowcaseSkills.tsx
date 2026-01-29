@@ -9,7 +9,7 @@ import {
   useMotionValueEvent,
 } from "framer-motion";
 
-const words = [ "Photographer", "UI/UX Designer", "Web Developer"];
+const words = ["Photographer", "UI/UX Designer", "Web Developer"];
 
 const imageGroups = [
   [
@@ -37,35 +37,80 @@ const imageGroups = [
 
 export default function ShowcaseSkills() {
   const sectionRef = useRef(null);
+
+  /* Desktop scroll logic */
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
-  });  
+  });
 
-  const indexValue = useTransform(scrollYProgress, [0.3, 0.5], [0, words.length - 1]);
+  const indexValue = useTransform(
+    scrollYProgress,
+    [0.3, 0.5],
+    [0, words.length - 1]
+  );
+
   const [activeIndex, setActiveIndex] = useState(0);
 
   useMotionValueEvent(indexValue, "change", (latest) => {
     setActiveIndex(Math.floor(latest + 0.5));
   });
- 
+
   const currentImages = imageGroups[activeIndex];
 
   return (
-    <main className="bg-black text-white flex justify-between px-40 items-center">
-      <section ref={sectionRef} className="h-[70vh]">
+    <main className="bg-black text-white">
+
+      {/* ================= MOBILE LAYOUT ================= */}
+      <section className="md:hidden px-6 py-16 space-y-16">
+        <h1 className="text-4xl font-bold text-center">SKILLS</h1>
+
+        {words.map((word, index) => (
+          <div key={index} className="space-y-6">
+            <h2 className="text-3xl font-bold text-center">{word}</h2>
+
+            <div
+              className={`
+                grid gap-4 place-items-center
+                ${imageGroups[index].length <= 4
+                  ? "grid-cols-2"
+                  : "grid-cols-3"}
+              `}
+            >
+              {imageGroups[index].map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  className="w-[70px] h-auto"
+                />
+              ))}
+            </div>
+          </div>
+        ))}
+      </section>
+
+      {/* ================= DESKTOP LAYOUT ================= */}
+      <section
+        ref={sectionRef}
+        className="hidden md:flex h-[70vh] justify-between items-center px-40"
+      >
         <div className="relative h-full">
-          <h1 className="absolute top-[32%] left-[-120px] text-6xl" style={{ rotate: "-90deg" }} >
+          <h1
+            className="absolute top-[32%] left-[-120px] text-6xl"
+            style={{ rotate: "-90deg" }}
+          >
             SKILLS
           </h1>
-          <div className="h-full flex flex-col items-start justify-center gap-10 sticky top-0">
+
+          <div className="h-full flex flex-col justify-center gap-10 sticky top-0">
             {words.map((word, index) => (
               <motion.h2
                 key={index}
-                initial={{ opacity: 0.3, scale: 0.1 }}
+                initial={{ opacity: 0.3, scale: 0.95 }}
                 animate={{
                   opacity: index === activeIndex ? 1 : 0.3,
-                  scale: index === activeIndex ? 1 : 0.99,
+                  scale: index === activeIndex ? 1 : 0.98,
                 }}
                 transition={{ duration: 0.4, ease: "easeOut" }}
                 className="text-6xl font-bold"
@@ -75,41 +120,34 @@ export default function ShowcaseSkills() {
             ))}
           </div>
         </div>
-      </section>
 
-      <div className="logo relative w-[420px] h-[220px]">
-        <AnimatePresence mode="wait">
-          <motion.div
-            key={activeIndex}
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -30 }}
-            transition={{ duration: 0.2 }}
-            className={`
-              absolute top-0 left-0 grid gap-4
-              ${currentImages.length === 3
-                ? "grid-cols-2 grid-rows-2"
-                : currentImages.length === 4
-                ? "grid-cols-2 grid-rows-2"
-                : "grid-cols-4"
-              }
-              w-full h-full place-items-center
-            `}
-          >
-            {currentImages.map((src, i) => (
-              <div
-                key={i}
-                className={`
-                  flex justify-center
-                  ${currentImages.length === 3 && i === 2 ? "col-span-2" : ""}
-                `}
-              >
-                <img src={src} alt="" className="w-[100px] h-auto" />
-              </div>
-            ))}
-          </motion.div>
-        </AnimatePresence>
-      </div>
+        <div className="relative w-[420px] h-[220px]">
+          <AnimatePresence mode="wait">
+            <motion.div
+              key={activeIndex}
+              initial={{ opacity: 0, y: 30 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -30 }}
+              transition={{ duration: 0.25 }}
+              className={`
+                absolute inset-0 grid gap-4 place-items-center
+                ${currentImages.length <= 4
+                  ? "grid-cols-2"
+                  : "grid-cols-4"}
+              `}
+            >
+              {currentImages.map((src, i) => (
+                <img
+                  key={i}
+                  src={src}
+                  alt=""
+                  className="w-[100px] h-auto"
+                />
+              ))}
+            </motion.div>
+          </AnimatePresence>
+        </div>
+      </section>
     </main>
   );
 }
