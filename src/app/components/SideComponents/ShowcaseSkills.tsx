@@ -40,7 +40,7 @@ export default function ShowcaseSkills() {
   const { scrollYProgress } = useScroll({
     target: sectionRef,
     offset: ["start end", "end start"],
-  });
+  });  
 
   const indexValue = useTransform(scrollYProgress, [0.3, 0.5], [0, words.length - 1]);
   const [activeIndex, setActiveIndex] = useState(0);
